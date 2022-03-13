@@ -22,9 +22,9 @@
 
 <script>
 export default {
-  name: 'FavoriteList',
+  name: 'CartList',
   props: {
-    favorite: Array
+    cart: Array
   },
   computed: {
     numProducts() {

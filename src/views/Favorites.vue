@@ -1,15 +1,15 @@
 <template>
 <div>
-  <FavoriteList :favorite="favorite" />
+  <CartList :cart="cart" />
 </div>
 </template>
 
 <script>
-import CartList from "../components/FavoriteList.vue"
+import CartList from "../components/CartList.vue"
 export default {
-  name: 'FavoriteView',
+  name: 'CartView',
   components: {
-    FavoriteList
+    CartList
   },
   data() {
     return {}
