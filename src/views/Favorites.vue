@@ -17,7 +17,7 @@ export default {
   computed: {
     Favorites() {
     // TODO: Make this work!
-      return this.$root.$data.cart;
+      return this.$root.$data.favorites;
     }
   },
 }

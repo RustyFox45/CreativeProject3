@@ -17,7 +17,7 @@ export default {
   computed: {
     pokemon() {
     // TODO: Make this work!
-      return this.$root.$data.products.filter(product => product.country === this.country);
+      return this.$root.$data.pokemon.filter(pokemon => pokemon.country === this.country);
     }
   },
   methods: {
@@ -27,3 +27,24 @@ export default {
   }
 }
 </script>
+
+
+<script>
+import PokemonList from "../components/PokemonList.vue"
+export default {
+  name: 'HomeView',
+  components: {
+    PokemonList
+  },
+  data() {
+    return {
+      searchText: '',
+    }
+  },
+  computed: {
+  pokemon() {
+    return this.$root.$data.pokemon.filter(pokemon => pokemon.name.toLowerCase().search(this.searchText.toLowerCase()) >= 0);
+    }
+  },
+}
+</script>s
