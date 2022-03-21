@@ -1,5 +1,12 @@
 <template>
-<PokemonList :pokemon="pokemon"  />
+<div>
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a @click="select('Kanto')" href="#" class="pure-menu-link">Kanto</a></li>
+    </ul>
+  </div>
+  <PokemonList :pokemons="pokemons"  />
+</div>
 </template>
 
 <script>
@@ -17,7 +24,7 @@ export default {
   computed: {
     pokemon() {
     // TODO: Make this work!
-      return this.$root.$data.products.filter(product => product.country === this.country);
+      return this.$root.$data.pokemon.filter(pokemon => pokemon.region === this.region);
     }
   },
   methods: {
