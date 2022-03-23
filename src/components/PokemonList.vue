@@ -19,27 +19,19 @@
 </template>
 
 <script>
+
 export default {
   name: 'PokemonList',
   props: {
-    pokemon: Array
+    pokemons: Array
   },
   methods: {
     addToFavorites(pokemon) {
-      let exist = false;
-      this.$root.$data.cart.forEach(item => {
-        if (item.id == pokemon.id) {
-          exist = true;
-        }
-      });
-      if (!exist) {
-        pokemon.quantity = 1;
-        this.$root.$data.cart.push(pokemon);
-      } else {
-        // Do Nothing!
-      }
+      console.log("Caught Pokemon", pokemon.name);
+      this.$root.$data.favorites.push(pokemon);
+      this.$root.$data.favorites.forEach(item => console.log("item in array", item.name));
     }
-  }
+  },
 }
 </script>
 

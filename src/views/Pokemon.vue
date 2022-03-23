@@ -1,36 +1,16 @@
 <template>
-<div>
-  <div class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list">
-      <li class="pure-menu-item"><a @click="select('Kanto')" href="#" class="pure-menu-link">Kanto</a></li>
-    </ul>
+  <div class="Pokemon">
+    <PokemonListByType :pokemons=this.$root.$data.pokemons />
   </div>
-  <PokemonList :pokemons="pokemons"  />
-</div>
 </template>
 
 <script>
-import PokemonList from "../components/PokemonList.vue"
+import PokemonListByType from "../components/PokemonListByType"
+
 export default {
-  name: 'PokemonVue',
+  name: 'PokemonView',
   components: {
-    PokemonList
+    PokemonListByType
   },
-  data() {
-    return {
-      Region: '',
-    }
-  },
-  computed: {
-    pokemon() {
-    // TODO: Make this work!
-      return this.$root.$data.pokemon.filter(pokemon => pokemon.region === this.region);
-    }
-  },
-  methods: {
-    select(region) {
-      this.region = region;
-    }
-  }
 }
 </script>
