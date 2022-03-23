@@ -1,16 +1,37 @@
 <template>
-  <div class="Pokemon">
-    <PokemonListByType :pokemons=this.$root.$data.pokemons />
+<div class="Pokemon">
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a @click="select('Fire')" href="#" class="pure-menu-link">Fire</a></li>
+      <li class="pure-menu-item"><a @click="select('Leaf')" href="#" class="pure-menu-link">Leaf</a></li>
+    </ul>
   </div>
+  <PokemonList :pokemons="pokemons" />
+</div>
 </template>
 
 <script>
-import PokemonListByType from "../components/PokemonListByType"
+import PokemonList from "../components/PokemonList"
 
 export default {
-  name: 'PokemonView',
+  name: 'PokemonVue',
   components: {
-    PokemonListByType
+    PokemonList
   },
+  data() {
+    return {
+      type: '',
+    }
+  },
+  computed: {
+    pokemons() {
+      return this.$root.$data.pokemons.filter(pokemon => pokemon.type === this.type);
+    }
+  },
+  methods: {
+    select(type) {
+      this.type = type;
+    }
+  }
 }
 </script>
