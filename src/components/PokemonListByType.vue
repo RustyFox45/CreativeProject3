@@ -1,27 +1,30 @@
 <template>
-  <div class="wrapper">
-    <div class="pokemons">
-      <div class="pokemon" v-for="pokemon in pokemons" :key="pokemon.id">
-        <div class="info">
-          <h1>{{pokemon.name}}</h1>
-          <p>{{pokemon.region}}</p>
-        </div>
-        <div class="image">
-          <img :src="pokemon.image">
-        </div>
-        <div class="region">
-          <h2>{{pokemon.region}}</h2>
-        </div>
+<div class="wrapper">
+  <div class="pokemons">
+    <div class="pokemon" v-for="pokemon in pokemons" :key="pokemon.id">
+      <div class="info">
+        <h1>{{pokemon.name}}</h1>
+        <p>{{pokemon.region}}</p>
+      </div>
+      <div class="image">
+        <img :src="pokemon.image">
+      </div>
+      <div class="region">
+        <h2>{{pokemon.type}}</h2>
       </div>
     </div>
-  </div></template>
+  </div>
+</div>
+</template>
 
 <script>
 
 export default {
-  name: 'FavoritesList',
+  name: 'PokemonList',
   props: {
     pokemons: Array
+  },
+  methods: {
   },
 }
 </script>

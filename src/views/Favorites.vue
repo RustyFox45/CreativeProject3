@@ -1,24 +1,16 @@
 <template>
-<div>
-  <FavoritesList :favorites="favorites" />
-</div>
+  <div class="favorites">
+    <FavoritesList :pokemons=$root.$data.favorites />
+  </div>
 </template>
 
 <script>
-import FavoritesList from "../components/FavoritesList.vue"
+import FavoritesList from "../components/FavoritesList"
+
 export default {
   name: 'FavoritesView',
   components: {
     FavoritesList
-  },
-  data() {
-    return {}
-  },
-  computed: {
-    Favorites() {
-    // TODO: Make this work!
-      return this.$root.$data.favorites;
-    }
   },
 }
 </script>
