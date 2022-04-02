@@ -4,13 +4,13 @@
     <div class="pokemon" v-for="pokemon in pokemons" :key="pokemon.id">
       <div class="info">
         <h1>{{pokemon.name}}</h1>
-        <p>{{pokemon.region}}</p>
+        <p>{{pokemon.region}} Region</p>
       </div>
       <div class="image">
         <img :src="pokemon.image">
       </div>
       <div class="region">
-        <h2>{{pokemon.region}}</h2>
+        <h2>{{pokemon.type}}</h2>
         <button @click="addToFavorites(pokemon)" class="auto">Catch</button>
       </div>
     </div>
